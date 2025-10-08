@@ -164,7 +164,7 @@
         <label for="Lb1" style="margin-left: 5px;">Libras</label>
       </div>
 
-      <input type="number" id="pound2" placeholder="Ej: 1" step="1" min="1" value="1"/>
+      <input type="number" id="pound2" placeholder="Ej: 1" step="1" min="1" value="0"/>
 
       <div class="result" id="results2" style="display: none;">
         <p>💼 <strong>Comisión <span id="feeVariable2">8</span>%:</strong> $<span id="fee2"></span></p>
@@ -176,7 +176,7 @@
   </div>
 
   <script>
-      const url = `https://raw.githubusercontent.com/Entre-Ticas/Shared/main/script.txt?nocache=${new Date().getTime()}`;
+     const url = `https://raw.githubusercontent.com/Entre-Ticas/Shared/main/script.txt?nocache=${new Date().getTime()}`;
         fetch(url)
         .then(response => response.text())
         .then(scriptText => {
