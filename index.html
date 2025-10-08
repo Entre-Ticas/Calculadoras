@@ -88,6 +88,13 @@
       border-radius: 15px;
       margin: 2px 0;
     }
+    .cbkNames {
+      display: inline-flex; align-items: center;
+    }
+
+
+
+    
   </style>
 </head>
 <body>
@@ -140,16 +147,24 @@
 
     <!-- Calculadora 3 -->
     <div class="calculator" id="calc3">
-     <label><input type="checkbox" id="cbkDollar2" onclick="calculate(3)"> Monto superior a $500</label><br/>
+      <label><input type="checkbox" id="cbkDollar2" onclick="calculate(3)"> Monto superior a $500</label><br/>
       <img src="EntreTicas.jpg" alt="Somos Entre Ticas" width="200" height="200"><br/>
       <label>Tipo de cambio:</label>
       <label id="exchange2">¢:</label><br/>
       <label>Precio de producto con impuestos incluidos (USD):</label>
       <input type="number" id="price2" placeholder="Ej: 50" step="0.01" min="0"/>
 
-      <label>Libras:</label>
-      <input type="number" id="pound2" placeholder="Ej: 1" step="1" min="1" value="1"/>
+      <div class="cbkNames">
+        <input type="radio" id="Kg1" name="unidad" />
+        <label for="Kg1" style="margin-left: 5px;">Kilos</label>
+      </div>
 
+      <div class="cbkNames">
+        <input type="radio" id="Lb1" name="unidad" />
+        <label for="Lb1" style="margin-left: 5px;">Libras</label>
+      </div>
+
+      <input type="number" id="pound2" placeholder="Ej: 1" step="1" min="1" value="1"/>
 
       <div class="result" id="results2" style="display: none;">
         <p>💼 <strong>Comisión <span id="feeVariable2">8</span>%:</strong> $<span id="fee2"></span></p>
@@ -161,15 +176,15 @@
   </div>
 
   <script>
-        const url = `https://raw.githubusercontent.com/Entre-Ticas/Shared/main/script.txt?nocache=${new Date().getTime()}`;
-          fetch(url)
-          .then(response => response.text())
-          .then(scriptText => {
-            const script = document.createElement("script");
-            script.textContent = scriptText;
-            document.body.appendChild(script);
-            init();
-          });
+      const url = `https://raw.githubusercontent.com/Entre-Ticas/Shared/main/script.txt?nocache=${new Date().getTime()}`;
+        fetch(url)
+        .then(response => response.text())
+        .then(scriptText => {
+          const script = document.createElement("script");
+          script.textContent = scriptText;
+          document.body.appendChild(script);
+          init();
+        });
   </script>
 </body>
 </html>
